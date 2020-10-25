@@ -22,6 +22,18 @@ import static anonymous.Employee.Status.FREE;
 public class TestOptional {
 
     private static final Employee employee = Employee.builder().age(16).name("晨哥").status(FREE).build();
+
+    /**
+     * 使用 Optional.ofNullable 进行判空，如果为空，orElse 可以进行兜底
+     *
+     */
+    @Test
+    public void optionalOfNullable(){
+        Employee temp = null;
+        Employee e = Optional.ofNullable(temp).orElse(Employee.builder().name("晨哥").status(FREE).build());
+        System.out.println(e.getName());
+    }
+
     /**
      * Optional.of(T t)
      * 创建一个 Optional 实例
@@ -109,4 +121,5 @@ public class TestOptional {
         Optional<String> flapMapResult = op.flatMap((e) -> Optional.of(e.getName()));
         System.out.println("flatMap: " + flapMapResult.get());
     }
+
 }
