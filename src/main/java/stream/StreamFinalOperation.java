@@ -24,7 +24,6 @@ public class StreamFinalOperation {
                 Employee.builder().name("晨哥").age(40).salary(1000000.0).status(VACATION).build()
     );
 
-
     /**
      * 查找与匹配
      * allMatch 检查是否匹配所有元素
@@ -110,6 +109,30 @@ public class StreamFinalOperation {
 
         System.out.println("sum " + sum);
         System.out.println("sumSalary " + sumSalary);
+    }
+
+    /**
+     * 判断是否为空
+     */
+    @Test
+    public void testEmpty(){
+        List<String> list = Lists.newArrayList("a", null, "b");
+        List<String> result = new ArrayList<>();
+        list.forEach(it->{
+            Optional.ofNullable(it).ifPresent(result::add);
+        });
+        //打印出 [a, b]
+        System.out.println(result);
+
+        //打印出 [a, b]
+        List<String> emptyList = Lists.newArrayList();
+        Optional.of(emptyList).ifPresent(result::addAll);
+        System.out.println(result);
+
+        String nullVal = null;
+        //会抛 NPE 异常
+        Optional.of(nullVal);
+        System.out.println(result);
     }
 
     /**
