@@ -1,15 +1,15 @@
 package stream;
 
-import anonymous.Employee;
+import define_function_self.Employee;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static anonymous.Employee.Status.BUSY;
-import static anonymous.Employee.Status.FREE;
-import static anonymous.Employee.Status.VACATION;
+import static define_function_self.Employee.Status.BUSY;
+import static define_function_self.Employee.Status.FREE;
+import static define_function_self.Employee.Status.VACATION;
 
 /**
  * stream 的终止操作

@@ -1,4 +1,4 @@
-package anonymous;
+package define_function_self;
 
 import lombok.Builder;
 import lombok.Data;

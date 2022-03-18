@@ -1,4 +1,4 @@
-package anonymous;
+package define_function_self;
 
 public class FilterEmployeeByAge implements MyStrategy<Employee>{
 
