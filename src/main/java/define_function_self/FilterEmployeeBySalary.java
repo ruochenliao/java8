@@ -1,4 +1,4 @@
-package anonymous;
+package define_function_self;
 
 public class FilterEmployeeBySalary implements MyStrategy<Employee>{
     @Override

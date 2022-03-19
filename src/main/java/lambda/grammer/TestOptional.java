@@ -1,12 +1,11 @@
 package lambda.grammer;
 
-import anonymous.Employee;
+import define_function_self.Employee;
 import org.junit.Test;
 
-import java.time.Instant;
 import java.util.Optional;
 
-import static anonymous.Employee.Status.FREE;
+import static define_function_self.Employee.Status.FREE;
 
 /**
  * Optional 容器类常用方法

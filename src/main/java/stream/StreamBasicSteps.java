@@ -1,6 +1,6 @@
 package stream;
 
-import anonymous.Employee;
+import define_function_self.Employee;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 

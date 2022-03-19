@@ -1,4 +1,4 @@
-package anonymous;
+package define_function_self;
 
 import com.alibaba.fastjson.JSON;
 
@@ -6,6 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.TreeSet;
 
+/**
+ * 自定义函数
+ */
 public class Test {
     public static void main(String[] args) {
         AnonymousLambada anonymousLambada = new AnonymousLambada();

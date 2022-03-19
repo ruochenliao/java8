@@ -1,4 +1,4 @@
-package anonymous;
+package define_function_self;
 
 import java.util.ArrayList;
 import java.util.List;
