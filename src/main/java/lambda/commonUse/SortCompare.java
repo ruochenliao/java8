@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class sort {
+public class SortCompare {
 
     List<Employee> newEmployees(){
         List<Employee> employeeList = Lists.newArrayList(
