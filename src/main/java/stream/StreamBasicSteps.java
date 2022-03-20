@@ -4,10 +4,8 @@ import define_function_self.Employee;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -18,8 +16,15 @@ import java.util.stream.Stream;
  * 三个步骤
  * 1、创建 stream
  * 2、中间操作
+ *      filter
+ *      map
+ *      limit
+ *      sorted
+ *      distinct
  * 3、终止操作: 终止操作不执行的话，中间操作不会被执行掉
- *
+ *      foreach
+ *      count
+ *      collect
  * 注意
  * 1、stream 不会存储元素
  * 2、stream 不会改变原对象。相反，它会返回一个持有结果的新 Stream
@@ -34,6 +39,37 @@ public class StreamBasicSteps {
                 Employee.builder().name("晨哥").age(40).salary(10000000.0).build(),
                 Employee.builder().name("晨哥").age(40).salary(10000000.0).build()
     );
+
+    @Test
+    public void testMiddleOperation(){
+        //中间操作
+        List<String> nameList = employeeList.stream()
+                .filter(it->it.getAge()>30)
+                .limit(3)
+                .sorted(Comparator.comparing(Employee::getSalary))
+                .distinct()
+                .map(Employee::getName)
+                .collect(Collectors.toList());
+
+        //终止操作
+        employeeList.stream()
+                .filter(it->it.getAge()>30)
+                .limit(3)
+                .sorted(Comparator.comparing(Employee::getSalary))
+                .distinct()
+                .map(Employee::getName)
+                .forEach(System.out::println);
+
+        long cnt = employeeList.stream()
+                .filter(it->it.getAge()>30)
+                .limit(3)
+                .sorted(Comparator.comparing(Employee::getSalary))
+                .distinct()
+                .map(Employee::getName)
+                .count();
+
+        System.out.println(cnt);
+    }
 
     /**
      * 创建流
